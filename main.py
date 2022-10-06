@@ -13,6 +13,11 @@ from selenium.webdriver.support import expected_conditions as EC
 URL = "http://www.naver.com"
 NAVER_SEARCH = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="
 
+def wait():
+    while True:
+        pass
+
+
 print("검색어:", end=" ")
 query = input()
 
@@ -24,5 +29,6 @@ try:
         EC.presence_of_element_located((By.ID, "main_pack"))
     )
     print(element)
+    wait()
 finally:
     driver.quit()
